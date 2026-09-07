@@ -44,6 +44,11 @@ def home():
         os.path.join(BASE_DIR, "index.html")
     )
 
+@app.get("/index.html")
+def index_page():
+    return FileResponse(
+        os.path.join(BASE_DIR, "index.html")
+    )
 
 @app.get("/plan.html")
 def plan_page():
