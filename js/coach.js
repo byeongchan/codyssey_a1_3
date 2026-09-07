@@ -75,7 +75,7 @@ form.addEventListener("submit", async (event) => {
 
 
         // API 오류 처리
-        if (!response.ok) {
+        if (!response.ok || !data.success) {
 
             throw new Error(
                 data.message ||
@@ -117,6 +117,12 @@ function showError(message) {
 
 
 function renderAnswer(answer) {
+
+    if (!answer) {
+        throw new Error(
+            "AI 코치의 답변이 비어 있습니다."
+        );
+    }
 
     loadingResult.hidden = true;
     emptyResult.hidden = true;

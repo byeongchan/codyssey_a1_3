@@ -130,7 +130,7 @@ goalInput.addEventListener("input", () => {
 
 
             // API 오류
-            if (!response.ok) {
+            if (!response.ok || !data.success) {
 
                 throw new Error(
                     data.message ||
@@ -180,24 +180,30 @@ goalInput.addEventListener("input", () => {
     // AI 결과 출력
     function renderPlan(plan) {
 
-        resultLoading.hidden = true;
-        resultEmpty.hidden = true;
-        resultContent.hidden = false;
-
-
-        // 줄바꿈을 HTML로 변환
-        const formattedPlan =
-            escapeHtml(plan)
-                .replace(/\n/g, "<br>");
-
-
-        planOutput.innerHTML = `
-            <div class="ai-plan-text">
-                ${formattedPlan}
-            </div>
-        `;
-
+    if (!plan) {
+        throw new Error(
+            "AI 학습 계획의 답변이 비어 있습니다."
+        );
     }
+
+    resultLoading.hidden = true;
+    resultEmpty.hidden = true;
+    resultContent.hidden = false;
+
+
+    // 줄바꿈을 HTML로 변환
+    const formattedPlan =
+        escapeHtml(plan)
+            .replace(/\n/g, "<br>");
+
+
+    planOutput.innerHTML = `
+        <div class="ai-plan-text">
+            ${formattedPlan}
+        </div>
+    `;
+
+}
 
 
     // AI 응답을 HTML에 안전하게 출력
