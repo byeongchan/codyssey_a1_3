@@ -175,9 +175,3 @@ def create_study_plan(request: StudyPlanRequest):
             "success": False,
             "message": "AI 학습 계획을 생성하지 못했습니다."
         }
-
-@app.get("/")
-def home():
-    return {
-        "message": "AI Study Coach API is working"
-    }
