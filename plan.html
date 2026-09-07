@@ -86,7 +86,11 @@
                                     name="subject"
                                     placeholder="예: Python, JavaScript, 데이터 분석"
                                     required
+                                    maxlength="100"
                                 >
+                                <div class="char-count">
+                                    <span id="subject-count">0</span> / 100
+                                </div>
 
                             </div>
 
@@ -134,7 +138,11 @@
                                     rows="4"
                                     placeholder="예: 3개월 안에 Python으로 간단한 웹 서비스를 만들고 싶어요."
                                     required
+                                    maxlength="1000"
                                 ></textarea>
+                                <div class="char-count">
+                                    <span id="goal-count">0</span> / 1000
+                                </div>
 
                             </div>
 

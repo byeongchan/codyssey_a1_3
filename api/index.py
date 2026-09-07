@@ -88,6 +88,12 @@ def ask_coach(request: CoachRequest):
             "message": "질문을 입력해주세요."
         }
 
+    if len(request.question) > 1000:
+        return {
+            "success": False,
+            "message": "질문은 1000자 이내로 입력해주세요."
+    }
+
     api_key = os.environ.get("GEMINI_API_KEY")
 
     if not api_key:
@@ -167,6 +173,18 @@ def create_study_plan(request: StudyPlanRequest):
         return {
             "success": False,
             "message": "학습 목표를 입력해주세요."
+        }
+
+    if len(request.subject) > 100:
+        return {
+            "success": False,
+            "message": "공부할 분야는 100자 이내로 입력해주세요."
+        }
+
+    if len(request.goal) > 1000:
+        return {
+            "success": False,
+            "message": "학습 목표는 1000자 이내로 입력해주세요."
         }
 
     api_key = os.environ.get("GEMINI_API_KEY")

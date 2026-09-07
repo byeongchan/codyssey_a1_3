@@ -2,6 +2,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const form = document.getElementById("coach-form");
 const questionInput = document.getElementById("question");
+const questionCount = document.getElementById("question-count");
+questionInput.addEventListener("input", () => {
+    questionCount.textContent = questionInput.value.length;
+});
 
 const errorMessage =
     document.getElementById("coach-error");

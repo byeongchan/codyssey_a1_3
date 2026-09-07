@@ -17,6 +17,29 @@ document.addEventListener("DOMContentLoaded", () => {
     const planOutput =
         document.getElementById("plan-output");
 
+    const subjectInput =
+    document.getElementById("subject");
+
+    const subjectCount =
+        document.getElementById("subject-count");
+
+    const goalInput =
+        document.getElementById("goal");
+
+    const goalCount =
+        document.getElementById("goal-count");
+
+
+    subjectInput.addEventListener("input", () => {
+        subjectCount.textContent =
+            subjectInput.value.length;
+    });
+
+
+goalInput.addEventListener("input", () => {
+    goalCount.textContent =
+        goalInput.value.length;
+});
 
     form.addEventListener("submit", async (event) => {
 
