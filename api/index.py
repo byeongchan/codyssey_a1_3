@@ -1,11 +1,69 @@
 import os
 
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from google import genai
 
 
 app = FastAPI()
+
+
+# =========================
+# 파일 경로
+# =========================
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# =========================
+# CSS / JS 파일 제공
+# =========================
+
+app.mount(
+    "/css",
+    StaticFiles(directory=os.path.join(BASE_DIR, "css")),
+    name="css"
+)
+
+app.mount(
+    "/js",
+    StaticFiles(directory=os.path.join(BASE_DIR, "js")),
+    name="js"
+)
+
+
+# =========================
+# HTML 페이지
+# =========================
+
+@app.get("/")
+def home():
+    return FileResponse(
+        os.path.join(BASE_DIR, "index.html")
+    )
+
+
+@app.get("/plan.html")
+def plan_page():
+    return FileResponse(
+        os.path.join(BASE_DIR, "plan.html")
+    )
+
+
+@app.get("/coach.html")
+def coach_page():
+    return FileResponse(
+        os.path.join(BASE_DIR, "coach.html")
+    )
+
+
+@app.get("/analysis.html")
+def analysis_page():
+    return FileResponse(
+        os.path.join(BASE_DIR, "analysis.html")
+    )
 
 
 # =========================
