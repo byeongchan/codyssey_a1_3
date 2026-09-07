@@ -144,7 +144,7 @@ def ask_coach(request: CoachRequest):
 
         return {
             "success": False,
-            "message": "AI 코치 답변을 생성하지 못했습니다."
+            "message": "AI 코치 답변을 생성하지 못했습니다.: {error}"
         }
 
 
@@ -254,5 +254,5 @@ def create_study_plan(request: StudyPlanRequest):
 
         return {
             "success": False,
-            "message": "AI 학습 계획을 생성하지 못했습니다."
+            "message": "AI 학습 계획을 생성하지 못했습니다. : {error}"
         }
