@@ -449,20 +449,32 @@ JSON 응답
 
 ## 14. 증빙 자료
 
-제출 시 다음 자료를 포함합니다.
-
 ### 서비스 스크린샷
 
 1. 데스크톱 메인 화면
+<p align="center">
+<img src="./image/PC환경.png">
+</p>
+
 2. 모바일 메인 화면
+<p align="center">
+<img src="./image/모바일환경.png">
+</p>
 3. AI 학습 계획 생성 결과
+<p align="center">
+<img src="./image/학습계획.png">
+</p>
 4. AI Coach 동작 화면
+<p align="center">
+<img src="./image/AI코치.png">
+</p>
 
 ### AI 코딩 도구 사용 증빙
 
 * AI 코딩 도구와의 대화 로그
-* 코드 생성 및 수정 과정
-* 오류 해결 과정
+<p align="center">
+<img src="./image/AI대화로그.png">
+</p>
 
 ---
 
