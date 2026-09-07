@@ -1,21 +1,12 @@
 {
-    "rewrites": [
-        {
-            "source": "/api/ai-coach",
-            "destination": "/api/index.py"
-        },
-        {
-            "source": "/api/study-plan",
-            "destination": "/api/index.py"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "/api/index.py"
-        },
-        {
-            "handle": "filesystem"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.py"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
